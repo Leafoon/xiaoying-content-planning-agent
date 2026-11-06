@@ -1,0 +1,1451 @@
+{
+  "task_id": "example-budget-replan",
+  "status": "COMPLETED",
+  "message": "方案已保存",
+  "proposal_id": "proposal-2ce90d60b425",
+  "missing_fields": [],
+  "steps": [
+    {
+      "step_id": "search_materials_1",
+      "step_name": "search_materials",
+      "description": "执行 search_materials",
+      "dependencies": [],
+      "tool_name": "search_materials",
+      "estimated_cost": 8.0,
+      "actual_cost": 8.0,
+      "estimated_duration": 4.0,
+      "status": "SUCCESS",
+      "result": {
+        "materials": [
+          {
+            "id": "premium_video",
+            "name": "高规格视频素材包",
+            "topics": [
+              "新品发布",
+              "品牌活动"
+            ],
+            "variants": [
+              "high_cost"
+            ],
+            "cost": 8,
+            "duration": 4.0,
+            "content": "长视频分镜、转场和配乐建议"
+          }
+        ],
+        "variant": "high_cost",
+        "material_cost": 8,
+        "material_duration": 4.0
+      },
+      "error": null
+    },
+    {
+      "step_id": "generate_script_1",
+      "step_name": "generate_script",
+      "description": "执行 generate_script",
+      "dependencies": [
+        "search_materials_1"
+      ],
+      "tool_name": "generate_script",
+      "estimated_cost": 4.0,
+      "actual_cost": 4.0,
+      "estimated_duration": 2.0,
+      "status": "SUCCESS",
+      "result": {
+        "script": "《新品发布》high_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+        "material_ids": [
+          "premium_video"
+        ],
+        "script_cost": 4.0,
+        "script_duration": 2.0,
+        "variant": "high_cost"
+      },
+      "error": null
+    },
+    {
+      "step_id": "estimate_cost_1",
+      "step_name": "estimate_cost",
+      "description": "执行 estimate_cost",
+      "dependencies": [
+        "search_materials_1",
+        "generate_script_1"
+      ],
+      "tool_name": "estimate_cost",
+      "estimated_cost": 12.0,
+      "actual_cost": 12.0,
+      "estimated_duration": 6.0,
+      "status": "SUCCESS",
+      "result": {
+        "total_cost": 12.0,
+        "remaining_budget": -2.0,
+        "total_duration_minutes": 6.0,
+        "meets_budget": false,
+        "meets_deadline": true,
+        "deadline_gap_hours": 20.44
+      },
+      "error": null
+    },
+    {
+      "step_id": "search_materials_2",
+      "step_name": "search_materials",
+      "description": "执行 search_materials",
+      "dependencies": [],
+      "tool_name": "search_materials",
+      "estimated_cost": 5.0,
+      "actual_cost": 5.0,
+      "estimated_duration": 2.0,
+      "status": "SUCCESS",
+      "result": {
+        "materials": [
+          {
+            "id": "social_pack",
+            "name": "社媒分发素材包",
+            "topics": [
+              "新品发布",
+              "品牌活动",
+              "通用"
+            ],
+            "variants": [
+              "standard",
+              "low_cost",
+              "fast"
+            ],
+            "cost": 3,
+            "duration": 1.0,
+            "content": "短视频封面、社交平台卡片和标题模板"
+          },
+          {
+            "id": "ugc_pack",
+            "name": "用户故事素材包",
+            "topics": [
+              "通用",
+              "校园活动",
+              "品牌活动"
+            ],
+            "variants": [
+              "standard",
+              "low_cost"
+            ],
+            "cost": 2,
+            "duration": 1.0,
+            "content": "用户故事、采访金句和互动贴纸"
+          }
+        ],
+        "variant": "low_cost",
+        "material_cost": 5,
+        "material_duration": 2.0
+      },
+      "error": null
+    },
+    {
+      "step_id": "generate_script_2",
+      "step_name": "generate_script",
+      "description": "执行 generate_script",
+      "dependencies": [
+        "search_materials_2"
+      ],
+      "tool_name": "generate_script",
+      "estimated_cost": 3.0,
+      "actual_cost": 3.0,
+      "estimated_duration": 1.5,
+      "status": "SUCCESS",
+      "result": {
+        "script": "《新品发布》low_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "script_cost": 3.0,
+        "script_duration": 1.5,
+        "variant": "low_cost"
+      },
+      "error": null
+    },
+    {
+      "step_id": "estimate_cost_2",
+      "step_name": "estimate_cost",
+      "description": "执行 estimate_cost",
+      "dependencies": [
+        "search_materials_2",
+        "generate_script_2"
+      ],
+      "tool_name": "estimate_cost",
+      "estimated_cost": 8.0,
+      "actual_cost": 8.0,
+      "estimated_duration": 3.5,
+      "status": "SUCCESS",
+      "result": {
+        "total_cost": 8.0,
+        "remaining_budget": 2.0,
+        "total_duration_minutes": 3.5,
+        "meets_budget": true,
+        "meets_deadline": true,
+        "deadline_gap_hours": 20.48
+      },
+      "error": null
+    },
+    {
+      "step_id": "save_proposal_1",
+      "step_name": "save_proposal",
+      "description": "执行 save_proposal",
+      "dependencies": [
+        "estimate_cost_2"
+      ],
+      "tool_name": "save_proposal",
+      "estimated_cost": 0.0,
+      "actual_cost": 0.0,
+      "estimated_duration": 0.1,
+      "status": "SUCCESS",
+      "result": {
+        "proposal_id": "proposal-2ce90d60b425",
+        "created": true,
+        "proposal": {
+          "topic": "新品发布",
+          "variant": "low_cost",
+          "materials": [
+            {
+              "id": "social_pack",
+              "name": "社媒分发素材包",
+              "topics": [
+                "新品发布",
+                "品牌活动",
+                "通用"
+              ],
+              "variants": [
+                "standard",
+                "low_cost",
+                "fast"
+              ],
+              "cost": 3,
+              "duration": 1.0,
+              "content": "短视频封面、社交平台卡片和标题模板"
+            },
+            {
+              "id": "ugc_pack",
+              "name": "用户故事素材包",
+              "topics": [
+                "通用",
+                "校园活动",
+                "品牌活动"
+              ],
+              "variants": [
+                "standard",
+                "low_cost"
+              ],
+              "cost": 2,
+              "duration": 1.0,
+              "content": "用户故事、采访金句和互动贴纸"
+            }
+          ],
+          "script": {
+            "script": "《新品发布》low_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+            "material_ids": [
+              "social_pack",
+              "ugc_pack"
+            ],
+            "script_cost": 3.0,
+            "script_duration": 1.5,
+            "variant": "low_cost"
+          },
+          "estimate": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          }
+        }
+      },
+      "error": null
+    }
+  ],
+  "traces": [
+    {
+      "task_id": "example-budget-replan",
+      "step": "1",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": null
+      },
+      "action": "model_decision",
+      "tool_name": "search_materials",
+      "arguments": {
+        "topic": "新品发布",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        },
+        "variant": "high_cost"
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "search_materials",
+        "reason": "开始检索与主题匹配的素材"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "search_materials",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.070151Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "1",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": null,
+        "material_ids": [
+          "premium_video"
+        ]
+      },
+      "action": "tool_call",
+      "tool_name": "search_materials",
+      "arguments": {
+        "topic": "新品发布",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        },
+        "variant": "high_cost"
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "materials",
+          "variant",
+          "material_cost",
+          "material_duration"
+        ],
+        "data": {
+          "materials": [
+            {
+              "id": "premium_video",
+              "name": "高规格视频素材包",
+              "topics": [
+                "新品发布",
+                "品牌活动"
+              ],
+              "variants": [
+                "high_cost"
+              ],
+              "cost": 8,
+              "duration": 4.0,
+              "content": "长视频分镜、转场和配乐建议"
+            }
+          ],
+          "variant": "high_cost",
+          "material_cost": 8,
+          "material_duration": 4.0
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 0.000262,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.071057Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "2",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": "search_materials",
+        "material_ids": [
+          "premium_video"
+        ]
+      },
+      "action": "model_decision",
+      "tool_name": "generate_script",
+      "arguments": {
+        "topic": "新品发布",
+        "material_ids": [
+          "premium_video"
+        ],
+        "variant": "high_cost",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        }
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "generate_script",
+        "reason": "根据检索结果生成脚本"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "generate_script",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.071167Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "2",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": "search_materials",
+        "material_ids": [
+          "premium_video"
+        ]
+      },
+      "action": "tool_call",
+      "tool_name": "generate_script",
+      "arguments": {
+        "topic": "新品发布",
+        "material_ids": [
+          "premium_video"
+        ],
+        "variant": "high_cost",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        }
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "script",
+          "material_ids",
+          "script_cost",
+          "script_duration",
+          "variant"
+        ],
+        "data": {
+          "script": "《新品发布》high_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+          "material_ids": [
+            "premium_video"
+          ],
+          "script_cost": 4.0,
+          "script_duration": 2.0,
+          "variant": "high_cost"
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 6.2e-05,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.071741Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "3",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": "generate_script",
+        "material_ids": [
+          "premium_video"
+        ]
+      },
+      "action": "model_decision",
+      "tool_name": "estimate_cost",
+      "arguments": {
+        "material_cost": 8,
+        "script_cost": 4.0,
+        "material_duration": 4.0,
+        "script_duration": 2.0,
+        "budget": 10.0,
+        "deadline": "2026-11-06T18:00:00+08:00",
+        "now": "2026-11-05T13:27:35.071926+00:00"
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "estimate_cost",
+        "reason": "根据素材和脚本结果估算成本与耗时"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "estimate_cost",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.071953Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "3",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": "generate_script",
+        "material_ids": [
+          "premium_video"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 12.0,
+            "remaining_budget": -2.0,
+            "total_duration_minutes": 6.0,
+            "meets_budget": false,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.44
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 6.6e-05
+        }
+      },
+      "action": "tool_call",
+      "tool_name": "estimate_cost",
+      "arguments": {
+        "material_cost": 8,
+        "script_cost": 4.0,
+        "material_duration": 4.0,
+        "script_duration": 2.0,
+        "budget": 10.0,
+        "deadline": "2026-11-06T18:00:00+08:00",
+        "now": "2026-11-05T13:27:35.071926+00:00"
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "total_cost",
+          "remaining_budget",
+          "total_duration_minutes",
+          "meets_budget",
+          "meets_deadline",
+          "deadline_gap_hours"
+        ],
+        "data": {
+          "total_cost": 12.0,
+          "remaining_budget": -2.0,
+          "total_duration_minutes": 6.0,
+          "meets_budget": false,
+          "meets_deadline": true,
+          "deadline_gap_hours": 20.44
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 6.6e-05,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.072465Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "4",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "high_cost",
+        "last_tool": "estimate_cost",
+        "material_ids": [
+          "premium_video"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 12.0,
+            "remaining_budget": -2.0,
+            "total_duration_minutes": 6.0,
+            "meets_budget": false,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.44
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 6.6e-05
+        }
+      },
+      "action": "model_decision",
+      "tool_name": "search_materials",
+      "arguments": {
+        "topic": "新品发布",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        },
+        "variant": "low_cost"
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "search_materials",
+        "reason": "观察到预算超限，切换低成本方案"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "search_materials",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.072653Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "4",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "estimate_cost",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 12.0,
+            "remaining_budget": -2.0,
+            "total_duration_minutes": 6.0,
+            "meets_budget": false,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.44
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 6.6e-05
+        }
+      },
+      "action": "tool_call",
+      "tool_name": "search_materials",
+      "arguments": {
+        "topic": "新品发布",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        },
+        "variant": "low_cost"
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "materials",
+          "variant",
+          "material_cost",
+          "material_duration"
+        ],
+        "data": {
+          "materials": [
+            {
+              "id": "social_pack",
+              "name": "社媒分发素材包",
+              "topics": [
+                "新品发布",
+                "品牌活动",
+                "通用"
+              ],
+              "variants": [
+                "standard",
+                "low_cost",
+                "fast"
+              ],
+              "cost": 3,
+              "duration": 1.0,
+              "content": "短视频封面、社交平台卡片和标题模板"
+            },
+            {
+              "id": "ugc_pack",
+              "name": "用户故事素材包",
+              "topics": [
+                "通用",
+                "校园活动",
+                "品牌活动"
+              ],
+              "variants": [
+                "standard",
+                "low_cost"
+              ],
+              "cost": 2,
+              "duration": 1.0,
+              "content": "用户故事、采访金句和互动贴纸"
+            }
+          ],
+          "variant": "low_cost",
+          "material_cost": 5,
+          "material_duration": 2.0
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 4.7e-05,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.073225Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "5",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "search_materials",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 12.0,
+            "remaining_budget": -2.0,
+            "total_duration_minutes": 6.0,
+            "meets_budget": false,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.44
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 6.6e-05
+        }
+      },
+      "action": "model_decision",
+      "tool_name": "generate_script",
+      "arguments": {
+        "topic": "新品发布",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "variant": "low_cost",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        }
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "generate_script",
+        "reason": "根据检索结果生成脚本"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "generate_script",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.073359Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "5",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "search_materials",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 12.0,
+            "remaining_budget": -2.0,
+            "total_duration_minutes": 6.0,
+            "meets_budget": false,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.44
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 6.6e-05
+        }
+      },
+      "action": "tool_call",
+      "tool_name": "generate_script",
+      "arguments": {
+        "topic": "新品发布",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "variant": "low_cost",
+        "preferences": {
+          "variant": "high_cost",
+          "fail_material_once": false
+        }
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "script",
+          "material_ids",
+          "script_cost",
+          "script_duration",
+          "variant"
+        ],
+        "data": {
+          "script": "《新品发布》low_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+          "material_ids": [
+            "social_pack",
+            "ugc_pack"
+          ],
+          "script_cost": 3.0,
+          "script_duration": 1.5,
+          "variant": "low_cost"
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 4.5e-05,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.073837Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "6",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "generate_script",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 12.0,
+            "remaining_budget": -2.0,
+            "total_duration_minutes": 6.0,
+            "meets_budget": false,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.44
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 6.6e-05
+        }
+      },
+      "action": "model_decision",
+      "tool_name": "estimate_cost",
+      "arguments": {
+        "material_cost": 5,
+        "script_cost": 3.0,
+        "material_duration": 2.0,
+        "script_duration": 1.5,
+        "budget": 10.0,
+        "deadline": "2026-11-06T18:00:00+08:00",
+        "now": "2026-11-05T13:27:35.073925+00:00"
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "estimate_cost",
+        "reason": "根据素材和脚本结果估算成本与耗时"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "estimate_cost",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.073938Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "6",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "generate_script",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 5.6e-05
+        }
+      },
+      "action": "tool_call",
+      "tool_name": "estimate_cost",
+      "arguments": {
+        "material_cost": 5,
+        "script_cost": 3.0,
+        "material_duration": 2.0,
+        "script_duration": 1.5,
+        "budget": 10.0,
+        "deadline": "2026-11-06T18:00:00+08:00",
+        "now": "2026-11-05T13:27:35.073925+00:00"
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "total_cost",
+          "remaining_budget",
+          "total_duration_minutes",
+          "meets_budget",
+          "meets_deadline",
+          "deadline_gap_hours"
+        ],
+        "data": {
+          "total_cost": 8.0,
+          "remaining_budget": 2.0,
+          "total_duration_minutes": 3.5,
+          "meets_budget": true,
+          "meets_deadline": true,
+          "deadline_gap_hours": 20.48
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 5.6e-05,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.077013Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "7",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "estimate_cost",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 5.6e-05
+        }
+      },
+      "action": "model_decision",
+      "tool_name": "save_proposal",
+      "arguments": {
+        "task_id": "example-budget-replan",
+        "proposal": {
+          "topic": "新品发布",
+          "variant": "low_cost",
+          "materials": [
+            {
+              "id": "social_pack",
+              "name": "社媒分发素材包",
+              "topics": [
+                "新品发布",
+                "品牌活动",
+                "通用"
+              ],
+              "variants": [
+                "standard",
+                "low_cost",
+                "fast"
+              ],
+              "cost": 3,
+              "duration": 1.0,
+              "content": "短视频封面、社交平台卡片和标题模板"
+            },
+            {
+              "id": "ugc_pack",
+              "name": "用户故事素材包",
+              "topics": [
+                "通用",
+                "校园活动",
+                "品牌活动"
+              ],
+              "variants": [
+                "standard",
+                "low_cost"
+              ],
+              "cost": 2,
+              "duration": 1.0,
+              "content": "用户故事、采访金句和互动贴纸"
+            }
+          ],
+          "script": {
+            "script": "《新品发布》low_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+            "material_ids": [
+              "social_pack",
+              "ugc_pack"
+            ],
+            "script_cost": 3.0,
+            "script_duration": 1.5,
+            "variant": "low_cost"
+          },
+          "estimate": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          }
+        },
+        "force_fail": false
+      },
+      "result_summary": {
+        "action": "tool_call",
+        "tool_name": "save_proposal",
+        "reason": "成本和截止时间均满足，保存方案"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "save_proposal",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.078276Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "7",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "estimate_cost",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 5.6e-05
+        }
+      },
+      "action": "tool_call",
+      "tool_name": "save_proposal",
+      "arguments": {
+        "task_id": "example-budget-replan",
+        "proposal": {
+          "topic": "新品发布",
+          "variant": "low_cost",
+          "materials": [
+            {
+              "id": "social_pack",
+              "name": "社媒分发素材包",
+              "topics": [
+                "新品发布",
+                "品牌活动",
+                "通用"
+              ],
+              "variants": [
+                "standard",
+                "low_cost",
+                "fast"
+              ],
+              "cost": 3,
+              "duration": 1.0,
+              "content": "短视频封面、社交平台卡片和标题模板"
+            },
+            {
+              "id": "ugc_pack",
+              "name": "用户故事素材包",
+              "topics": [
+                "通用",
+                "校园活动",
+                "品牌活动"
+              ],
+              "variants": [
+                "standard",
+                "low_cost"
+              ],
+              "cost": 2,
+              "duration": 1.0,
+              "content": "用户故事、采访金句和互动贴纸"
+            }
+          ],
+          "script": {
+            "script": "《新品发布》low_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+            "material_ids": [
+              "social_pack",
+              "ugc_pack"
+            ],
+            "script_cost": 3.0,
+            "script_duration": 1.5,
+            "variant": "low_cost"
+          },
+          "estimate": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          }
+        },
+        "force_fail": false
+      },
+      "result_summary": {
+        "success": true,
+        "error": null,
+        "partial": false,
+        "retryable": false,
+        "keys": [
+          "proposal_id",
+          "created",
+          "proposal"
+        ],
+        "data": {
+          "proposal_id": "proposal-2ce90d60b425",
+          "created": true,
+          "proposal": {
+            "topic": "新品发布",
+            "variant": "low_cost",
+            "materials": [
+              {
+                "id": "social_pack",
+                "name": "社媒分发素材包",
+                "topics": [
+                  "新品发布",
+                  "品牌活动",
+                  "通用"
+                ],
+                "variants": [
+                  "standard",
+                  "low_cost",
+                  "fast"
+                ],
+                "cost": 3,
+                "duration": 1.0,
+                "content": "短视频封面、社交平台卡片和标题模板"
+              },
+              {
+                "id": "ugc_pack",
+                "name": "用户故事素材包",
+                "topics": [
+                  "通用",
+                  "校园活动",
+                  "品牌活动"
+                ],
+                "variants": [
+                  "standard",
+                  "low_cost"
+                ],
+                "cost": 2,
+                "duration": 1.0,
+                "content": "用户故事、采访金句和互动贴纸"
+              }
+            ],
+            "script": {
+              "script": "《新品发布》low_cost 方案：开场引入主题，展示素材亮点，加入行动号召并适配社媒发布。",
+              "material_ids": [
+                "social_pack",
+                "ugc_pack"
+              ],
+              "script_cost": 3.0,
+              "script_duration": 1.5,
+              "variant": "low_cost"
+            },
+            "estimate": {
+              "total_cost": 8.0,
+              "remaining_budget": 2.0,
+              "total_duration_minutes": 3.5,
+              "meets_budget": true,
+              "meets_deadline": true,
+              "deadline_gap_hours": 20.48
+            }
+          }
+        }
+      },
+      "status_change": "RUNNING->SUCCESS",
+      "replanning_reason": null,
+      "next_action": "replan",
+      "duration_seconds": 0.000587,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.080011Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "8",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "save_proposal",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 5.6e-05
+        }
+      },
+      "action": "model_decision",
+      "tool_name": null,
+      "arguments": {},
+      "result_summary": {
+        "action": "finish",
+        "tool_name": null,
+        "reason": "保存工具返回成功"
+      },
+      "status_change": "",
+      "replanning_reason": null,
+      "next_action": "finish",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": null,
+      "created_at": "2026-11-05T13:27:35.080176Z"
+    },
+    {
+      "task_id": "example-budget-replan",
+      "step": "8",
+      "plan": {
+        "request": {
+          "task_id": "example-budget-replan",
+          "topic": "新品发布",
+          "budget": 10.0,
+          "deadline": "2026-11-06T18:00:00+08:00",
+          "preferences": {
+            "variant": "high_cost",
+            "fail_material_once": false
+          }
+        },
+        "variant": "low_cost",
+        "last_tool": "save_proposal",
+        "material_ids": [
+          "social_pack",
+          "ugc_pack"
+        ],
+        "estimate_result": {
+          "success": true,
+          "data": {
+            "total_cost": 8.0,
+            "remaining_budget": 2.0,
+            "total_duration_minutes": 3.5,
+            "meets_budget": true,
+            "meets_deadline": true,
+            "deadline_gap_hours": 20.48
+          },
+          "error": null,
+          "partial": false,
+          "retryable": false,
+          "duration_seconds": 5.6e-05
+        }
+      },
+      "action": "final",
+      "tool_name": null,
+      "arguments": {},
+      "result_summary": {
+        "message": "方案已保存"
+      },
+      "status_change": "RUNNING->COMPLETED",
+      "replanning_reason": null,
+      "next_action": "stop",
+      "duration_seconds": 0.0,
+      "mode": "mock",
+      "final_result": "COMPLETED",
+      "created_at": "2026-11-05T13:27:35.080338Z"
+    }
+  ],
+  "budget": 10.0,
+  "total_cost": 8.0,
+  "total_duration": 3.5,
+  "constraint_details": {
+    "remaining_budget": 2.0,
+    "meets_budget": true,
+    "meets_deadline": true,
+    "deadline_gap_hours": 20.48
+  }
+}

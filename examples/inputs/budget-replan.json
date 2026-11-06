@@ -1,0 +1,7 @@
+{
+  "task_id": "example-budget-replan",
+  "topic": "新品发布",
+  "budget": 10,
+  "deadline": "2026-11-06T18:00:00+08:00",
+  "preferences": {"variant": "high_cost"}
+}

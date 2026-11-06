@@ -1,0 +1,64 @@
+[
+  {
+    "id": "hero_launch",
+    "name": "主视觉合成包",
+    "topics": [
+      "新品发布",
+      "品牌活动",
+      "通用"
+    ],
+    "variants": [
+      "standard"
+    ],
+    "cost": 6,
+    "duration": 2.0,
+    "content": "高质感主视觉、产品特写和活动 KV"
+  },
+  {
+    "id": "social_pack",
+    "name": "社媒分发素材包",
+    "topics": [
+      "新品发布",
+      "品牌活动",
+      "通用"
+    ],
+    "variants": [
+      "standard",
+      "low_cost",
+      "fast"
+    ],
+    "cost": 3,
+    "duration": 1.0,
+    "content": "短视频封面、社交平台卡片和标题模板"
+  },
+  {
+    "id": "ugc_pack",
+    "name": "用户故事素材包",
+    "topics": [
+      "通用",
+      "校园活动",
+      "品牌活动"
+    ],
+    "variants": [
+      "standard",
+      "low_cost"
+    ],
+    "cost": 2,
+    "duration": 1.0,
+    "content": "用户故事、采访金句和互动贴纸"
+  },
+  {
+    "id": "premium_video",
+    "name": "高规格视频素材包",
+    "topics": [
+      "新品发布",
+      "品牌活动"
+    ],
+    "variants": [
+      "high_cost"
+    ],
+    "cost": 8,
+    "duration": 4.0,
+    "content": "长视频分镜、转场和配乐建议"
+  }
+]
